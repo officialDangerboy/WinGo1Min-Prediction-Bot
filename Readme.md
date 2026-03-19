@@ -157,33 +157,6 @@ git push origin feature/YourFeature
 
 ---
 
-## 🐛 Known Compatibility Notes
-
-> **Python Version is Critical — Read Before Running**
-
-The `bot.py` contains compiled Python bytecode built specifically for **Python 3.13**.
-
-| Python Version | Status |
-|----------------|--------|
-| ✅ Python 3.13 | **Works perfectly** |
-| ❌ Python 3.11 / 3.12 | Crashes with `segfault` (incompatible bytecode) |
-| ❌ Python 3.10 and older | Throws `bad marshal data` error |
-
-**Root Cause:** The bytecode format differs between Python versions. Running the bot on any version other than 3.13 will cause immediate crashes.
-
-**Fix:** Make sure your environment is running **Python 3.13** and all dependencies are installed targeting the correct Python 3.13 library path:
-
-```bash
-python3.13 -m pip install -r requirements.txt
-python3.13 bot.py
-```
-
-On Replit, set your language/runtime to **Python 3.13** in the Repl settings before hitting Run.
-
-Once running correctly, the bot polls for WinGo rounds every **10 seconds** and processes predictions in real time. You'll see live output in the console — just ensure your `BOT_TOKEN` secret is set and you can interact with it on Telegram immediately.
-
----
-
 ## ⚠️ Disclaimer
 
 This bot is built for **educational and entertainment purposes only**. Predictions are generated algorithmically — no prediction is 100% guaranteed. The developer holds no responsibility for any losses. Always use responsibly.
