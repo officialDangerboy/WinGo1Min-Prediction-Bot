@@ -2,7 +2,7 @@
 
 # 🔮 WinGo 1Min Prediction Bot
 
-<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 <img src="https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"/>
 <img src="https://img.shields.io/badge/Accuracy-60--70%25-22C55E?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Replit-Ready-F26207?style=for-the-badge&logo=replit&logoColor=white"/>
@@ -35,7 +35,7 @@
 
 ## ⚙️ Requirements
 
-- **Python 3.11** or higher
+- **Python 3.13** or higher
 - A Telegram Bot Token (free from [@BotFather](https://t.me/BotFather))
 - A [Replit](https://replit.com) account *(for cloud hosting)*
 
@@ -154,6 +154,33 @@ git push origin feature/YourFeature
 - Write clean, well-commented code
 - Test before submitting a PR
 - One feature/fix per pull request
+
+---
+
+## 🐛 Known Compatibility Notes
+
+> **Python Version is Critical — Read Before Running**
+
+The `bot.py` contains compiled Python bytecode built specifically for **Python 3.13**.
+
+| Python Version | Status |
+|----------------|--------|
+| ✅ Python 3.13 | **Works perfectly** |
+| ❌ Python 3.11 / 3.12 | Crashes with `segfault` (incompatible bytecode) |
+| ❌ Python 3.10 and older | Throws `bad marshal data` error |
+
+**Root Cause:** The bytecode format differs between Python versions. Running the bot on any version other than 3.13 will cause immediate crashes.
+
+**Fix:** Make sure your environment is running **Python 3.13** and all dependencies are installed targeting the correct Python 3.13 library path:
+
+```bash
+python3.13 -m pip install -r requirements.txt
+python3.13 bot.py
+```
+
+On Replit, set your language/runtime to **Python 3.13** in the Repl settings before hitting Run.
+
+Once running correctly, the bot polls for WinGo rounds every **10 seconds** and processes predictions in real time. You'll see live output in the console — just ensure your `BOT_TOKEN` secret is set and you can interact with it on Telegram immediately.
 
 ---
 
