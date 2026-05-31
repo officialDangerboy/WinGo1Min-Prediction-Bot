@@ -19,6 +19,10 @@
 
 ---
 
+## HOW TO USE 
+
+watch this video : https://youtu.be/7knBRoM2zOA?si=ZSHkYAD9DO5TRKRP
+
 ## ✨ Features
 
 | Feature | Description |
